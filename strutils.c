@@ -28,7 +28,8 @@ str* strsplit(str s, char d, size_t* lr) {
     v[l - 1] = strdup(w);
     w = strtok(NULL, &d);
   }
-  *lr = l;
+  if (lr != NULL)
+    *lr = l;
   free(tmp);
   return v;
 }
