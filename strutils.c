@@ -49,18 +49,18 @@ str strjoin(str* sa, size_t sal, char d) {
   size_t toalloc = 0;
   for (size_t i = 0; i < sal; i++)
     toalloc += strlen(sa[i]);
-  toalloc += sal - 1;
-  toalloc += 1;
+  toalloc += sal - 1 + 1;
   str temp = malloc(toalloc);
   if (!temp) return NULL;
-  temp[0] = 0x00;
+  size_t pos = 0;
   for (size_t i = 0; i < sal; i++) {
-    strcat(temp, sa[i]);
-    if (i < sal - 1) {
-      temp[strlen(temp)] = d;
-      temp[strlen(temp) + 1] = 0x00;
-    }
+    size_t len = strlen(sa[i]);
+    memcpy(&temp[pos], sa[i], len);
+    pos += len;
+    if (i < sal - 1)
+      temp[pos++] = d;
   }
+  temp[pos] = '\0';
   return temp;
 }
 
