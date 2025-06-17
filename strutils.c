@@ -122,7 +122,7 @@ void dptrfree(void** dp, size_t ln) {
 
 str strreplace(str s, char c, char r, str* rs) {
   str t = strdup(s);
-  for (int i = 0; i < strlen(t); i++) {
+  for (size_t i = 0; i < strlen(t); i++) {
     if (t[i] == c) {
       t[i] = r;
     }
@@ -137,7 +137,7 @@ str strreplace(str s, char c, char r, str* rs) {
 }
 
 int strhas(str s, char c) {
-  for (int i = 0; i < strlen(s); i++) {
+  for (size_t i = 0; i < strlen(s); i++) {
     if (s[i] == c)
       return 1;
   }
