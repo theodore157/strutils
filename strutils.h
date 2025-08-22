@@ -17,10 +17,10 @@ typedef char* str;
 // `int* lr`: length return
 str* strsplit(str s, char d, unsigned long* lr);
 
-// invert a string
+// reverse a string
 //
 // `str s`: string
-str strinvert(str s);
+str strreverse(str s);
 
 // free a double-pointer variable
 //

@@ -1,3 +1,5 @@
+// i don't want to update this anymore
+
 #include "strutils.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +14,7 @@ int main() {
   char* testHUH = strdup("hello world!!!");
   char** testS_split = strsplit(testS, ' ', &l);
   char** testS2_split = strsplit(testS2, ',', &l2);
-  char* testRS = strinvert(strdup("string to be reversed"));
+  char* testRS = strreverse(strdup("string to be reversed"));
   char* testTCS = strdup("this is title-cased text, this is also just a string/array of characters\\whatever you could call it");
   char* testUCS = strdup("i'm screaming at the very top of my lungs!!!!! can you hear me????");
   char* testRCS = strdup("I'M SCREAMING AT THE TOP OF MY VERY LUNGS!!!!! can you hear me????");
@@ -26,7 +28,7 @@ int main() {
   char* testLCdS = strlowercase(testUCdS);
   char* testRCdS = strreversecase(testRCS);
   char* testHUHd = malloc(strlen(testHUH) + 1);
-  // theoretically you could replace anything with 0x0 (null term.)
+  // theoretically you could replace anything with the null terminator
   // but that would end the string early
   strreplace(testHUH, '!', '?', &testHUHd);
   char* testHUHd2 = strreplace(testHUHd, '?', '.', NULL);
